@@ -6,7 +6,7 @@ import sys
 sys.path.append("../model")
 from Robot import *
 
-print("hello")
+print("hello: p_controller!!!")
 
 robot = Robot()
 robot.set(0,1,0)

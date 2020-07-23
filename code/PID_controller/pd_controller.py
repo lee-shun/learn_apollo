@@ -3,6 +3,8 @@
 #
 # run - does a single control run
 
+import sys
+sys.path.append("../model")
 from Robot import *
 
 print("hello: pd_controller!!!")
