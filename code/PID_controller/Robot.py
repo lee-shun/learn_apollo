@@ -31,7 +31,7 @@ class Robot(object):
         self.orientation = 0.0
         self.steering_noise = 0.0
         self.distance_noise = 0.0
-        self.steering_dirft = 0.0 #漂移
+        self.steering_drift = 0.0 #漂移
 
     def set(self,x,y,orientation):
         """
@@ -58,7 +58,7 @@ class Robot(object):
         self.steering_drift = drift
 
     def move(self,steering,distance,tolerance = 0.001,
-             max_steering_angel=np.pi/4.0):
+             max_steering_angle=np.pi/4.0):
         """
         Steering = front wheel steering angle, limited by the max_
         distance = total_distance driven, must be non-negative
@@ -84,7 +84,7 @@ class Robot(object):
             #approximate by the straight line motion
             self.x += distance2 * np.cos(self.orientation)
             self.y += distance2 * np.sin(self.orientation)
-            self.orientation = (self.orientation + trun) % (2.0 * np.pi)
+            self.orientation = (self.orientation + turn) % (2.0 * np.pi)
         else:
             #approximate bicycle model for motion
             radius = distance2 / turn
