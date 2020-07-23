@@ -4,3 +4,5 @@
 # run - does a single control run
 
 import Robot
+
+print("hello")
