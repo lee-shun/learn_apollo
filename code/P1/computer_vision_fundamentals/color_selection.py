@@ -14,6 +14,7 @@ xszie  = image.shape[1]
 #Note: always make a copy rather than simply using "="
 color_select = np.copy(image)
 
+print(color_select)
 
 #define the threshold# Define our color selection criteria
 # Note: if you run this code, you'll find these are not sensible values!!
@@ -29,6 +30,7 @@ thresholds = (image[:,:,0] < rgb_threshold[0]) \
               |   (image[:,:,2] < rgb_threshold[2] )
 color_select[thresholds] = [0,0,0]
 
+print(color_select)
 #display
 plt.imshow(color_select)
 plt.show()
