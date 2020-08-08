@@ -35,7 +35,7 @@ class Matrix(object):
         else:
             self.dimx = dim
             self.dimy = dim
-            self.value = [[0 for row in range(dimy)] for col in range(dimx)]
+            self.value = [[0 for row in range(dim)] for col in range(dim)]
             for i in range(self.dimy):
                 self.value[i][i] = UNIT
 
@@ -45,7 +45,7 @@ class Matrix(object):
             raise ValueError
         else:
             # add if correct dimensions
-            res = matrix([[]])
+            res = Matrix([[]])
             res.zero(self.dimx, self.dimy)
             for i in range(self.dimx):
                 for j in range(self.dimy):
@@ -58,7 +58,7 @@ class Matrix(object):
             raise ValueError
         else:
             # subtract if correct dimensions
-            res = matrix([[]])
+            res = Matrix([[]])
             res.zero(self.dimx, self.dimy)
             for i in range(self.dimx):
                 for j in range(self.dimy):
@@ -71,7 +71,7 @@ class Matrix(object):
             raise ValueError
         else:
             # multiply if correct dimensions
-            res = matrix([[]])
+            res = Matrix([[]])
             res.zero(self.dimx, other.dimy)
             for i in range(self.dimx):
                 for j in range(other.dimy):
@@ -81,7 +81,7 @@ class Matrix(object):
 
     def transpose(self):
         # compute transpose
-        res = matrix([[]])
+        res = Matrix([[]])
         res.zero(self.dimy, self.dimx)
         for i in range(self.dimx):
             for j in range(self.dimy):
@@ -93,7 +93,7 @@ class Matrix(object):
     def Cholesky(self, ztol=1.0e-5):
         # Computes the upper triangular Cholesky factorization of
         # a positive definite matrix.
-        res = matrix([[]])
+        res = Matrix([[]])
         res.zero(self.dimx, self.dimx)
 
         for i in range(self.dimx):
@@ -119,7 +119,7 @@ class Matrix(object):
     def CholeskyInverse(self):
         # Computes inverse of matrix given its Cholesky upper Triangular
         # decomposition of matrix.
-        res = matrix([[]])
+        res = Matrix([[]])
         res.zero(self.dimx, self.dimx)
 
         # Backward step for inverse.
