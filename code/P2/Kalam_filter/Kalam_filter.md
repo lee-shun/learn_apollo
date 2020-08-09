@@ -7,8 +7,8 @@
             $z_{k} = Hx_{k}+\nu_{k}$
 
     * 上式中，有过程噪声以及测量误差，并符合正态分布
-        * $P(\omega)\sim(0,Q)$, $Q$是协方差矩阵(covariance matrix),$Q = E[\omega \omega^T]$
-        * $P(\mu)\sim(0,R)$, $R$是协方差矩阵(covariance matrix),$R = E[\mu \mu^T]$
+        * $P(\omega)\sim N(0,Q)$, $Q$是协方差矩阵(covariance matrix),$Q = E[\omega \omega^T]$
+        * $P(\mu)\sim N(0,R)$, $R$是协方差矩阵(covariance matrix),$R = E[\mu \mu^T]$
 
 * 先验和后验：
     * 先验是根据模型以及已有的数学知识计算得出的；
